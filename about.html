@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Adaptive E-Learning</title>
+     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+
+<style>/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: #f9f9f9;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #0a66c2;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #0a0a0a;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    color: #0a66c2;
+}
+
+.btn-login,
+.btn-signup {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-login {
+    background: transparent;
+    color: #0a66c2;
+    border: 1px solid #0a66c2;
+}
+
+.btn-login:hover {
+    background: #0a66c2;
+    color: #fff;
+}
+
+.btn-signup {
+    background: #0a66c2;
+    color: #fff;
+    border: none;
+}
+
+.btn-signup:hover {
+    background: #004a99;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+#about-hero {
+    background: linear-gradient(to right, #0a66c2, #0059b3);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+#about-hero h1 {
+    font-size: 2.5rem;
+}
+
+#about-hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Section Title */
+.section-title h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid #0a66c2;
+    padding-left: 10px;
+    color: #333;
+}
+
+/* Story Section */
+.story-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+.story-text {
+    flex: 1;
+}
+
+.story-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Mission Card */
+.mission-card {
+    background: #eaf4ff;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-left: 5px solid #0a66c2;
+    border-radius: 8px;
+}
+
+/* Team Grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Technology Section */
+.tech-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tech-image img {
+    width: 100%;
+}
+
+.tech-text ul {
+    margin-top: 1rem;
+    list-style-type: square;
+    padding-left: 1.5rem;
+}
+
+/* CTA Section */
+#about-cta {
+    background: #0a66c2;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.btn-cta {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 0.8rem 1.5rem;
+    background: white;
+    color: #0a66c2;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-cta:hover {
+    background: #e6e6e6;
+}
+
+/* Footer */
+footer {
+    background-color: #f1f1f1;
+    padding: 40px 0 20px;
+    margin-top: 4rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-bottom: 20px;
+}
+
+.footer-col h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #0a66c2;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #777;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.social-links a {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #0a66c2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 80px;
+        right: 10px;
+        padding: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+</style>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Adaptive E-Learning Logo" class="logo">
+                <h1>Adaptive E-Learning</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html" class="btn-login">Login</a></li>
+                    <li><a href="signup.html" class="btn-signup">Sign Up</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <section id="about-hero">
+        <div class="container">
+            <h1>About Adaptive E-Learning</h1>
+            <p>Revolutionizing education through personalized learning experiences</p>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="our-story">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Story</h2>
+            </div>
+            <div class="story-content">
+                <div class="story-text">
+                    <p>Founded in 2023, Adaptive E-Learning began with a simple mission: to make education more effective by tailoring it to individual learning needs. Our team of educators, technologists, and data scientists came together to create a platform that adapts in real-time to each learner's strengths and weaknesses.</p>
+                    <p>Traditional one-size-fits-all education often leaves students frustrated, either because the pace is too slow or because they struggle to keep up. We saw an opportunity to leverage technology to solve this problem, creating a system that adjusts content and pacing based on continuous assessment of the learner's performance.</p>
+                </div>
+                <div class="story-image">
+                    <img src="images/about-story.jpg" alt="Our Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section id="our-mission">
+        <div class="container">
+            <div class="mission-card">
+                <h2>Our Mission</h2>
+                <p>To empower learners worldwide by providing personalized educational experiences that adapt to their unique needs, helping them achieve their full potential efficiently and effectively.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="our-team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Team</h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/team1.jpg" alt="Dr. Sarah Johnson">
+                    <h3>Dr. Sarah Johnson</h3>
+                    <p>Chief Learning Officer</p>
+                    <p>PhD in Educational Psychology with 15 years of experience in curriculum design.</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/team2.jpg" alt="Michael Chen">
+                    <h3>Michael Chen</h3>
+                    <p>Chief Technology Officer</p>
+                    <p>Expert in machine learning and adaptive systems with a passion for education.</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/team3.jpg" alt="David Martinez">
+                    <h3>David Martinez</h3>
+                    <p>Head of Product</p>
+                    <p>Combines UX design expertise with instructional design principles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="our-technology">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Technology</h2>
+            </div>
+            <div class="tech-content">
+                <div class="tech-image">
+                    <img src="images/tech-illustration.png" alt="Our Technology">
+                </div>
+                <div class="tech-text">
+                    <h3>How Adaptive Learning Works</h3>
+                    <p>Our platform uses sophisticated algorithms to analyze learner interactions and performance in real-time. Based on this data, the system:</p>
+                    <ul>
+                        <li><strong>Adjusts difficulty:</strong> Presents content at the right challenge level</li>
+                        <li><strong>Personalizes paths:</strong> Routes learners through optimal sequences</li>
+                        <li><strong>Identifies gaps:</strong> Detects and addresses knowledge deficiencies</li>
+                        <li><strong>Optimizes pacing:</strong> Speeds up or slows down as needed</li>
+                    </ul>
+                    <p>The result is a learning experience that feels tailor-made for each individual, maximizing engagement and knowledge retention.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="about-cta">
+        <div class="container">
+            <h2>Ready to Experience Adaptive Learning?</h2>
+            <p>Join thousands of learners who are achieving their goals with our personalized approach.</p>
+            <a href="signup.html" class="btn-cta">Start Your Journey</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo-container">
+                        <img src="images/logo.png" alt="Adaptive E-Learning Logo" class="logo">
+                        <h3>Adaptive E-Learning</h3>
+                    </div>
+                    <p>Empowering learners through personalized education technology.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li><a href="courses.html#web-dev">Web Development</a></li>
+                        <li><a href="courses.html#data-science">Data Science</a></li>
+                        <li><a href="courses.html#ai-ml">AI & ML</a></li>
+                        <li><a href="courses.html#cybersecurity">Cybersecurity</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Learning St, Edu City</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@adaptive-elearning.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Adaptive E-Learning. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>// Responsive nav toggle
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+    });
+
+    // Close nav on link click (optional)
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("show");
+        });
+    });
+});
+</script>
+</body>
+</html>
